@@ -3,7 +3,7 @@ services:
   grafana_web: 
     image: grafana/grafana
     volumes:
-      - grafana-storage:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
     links: 
       - prometheus
     ports: 
@@ -15,5 +15,5 @@ services:
     volumes:
       - prometheus-data:/prometheus
 volumes:
-  grafana-storage:
+  grafana-data:
   prometheus-data:
