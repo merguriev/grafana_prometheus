@@ -4,6 +4,7 @@ services:
     image: grafana/grafana
     volumes:
       - grafana-data:/var/lib/grafana
+      - grafana-conf:/etc/grafana 
     links: 
       - prometheus
     ports: 
@@ -14,6 +15,9 @@ services:
       - "9090:9090"
     volumes:
       - prometheus-data:/prometheus
+      - prometheus-conf:/etc/prometheus  
 volumes:
   grafana-data:
   prometheus-data:
+  grafana-conf:
+  prometheus-conf:        
